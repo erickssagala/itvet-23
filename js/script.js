@@ -3,11 +3,13 @@ const logoLink = document.querySelector('.logo');
 const sections = document.querySelectorAll('section');
 const menuIcon = document.querySelector('#menu-icon');
 const navBar = document.querySelector('header nav');
+const exploreBtn = document.querySelector('.explore-btn');
 
 menuIcon.addEventListener('click', () => {
     menuIcon.classList.toggle('bx-x');
     navBar.classList.toggle('active');
 });
+
 
 const activePage = () => {
 
@@ -47,6 +49,14 @@ logoLink.addEventListener('click', () => {
             sections[0].classList.add('active');
         }, 100);
     }
+});
+
+exploreBtn.addEventListener('click', () => {
+    activePage();
+    navLinks[1].classList.add('active');
+    setTimeout(() => {
+        sections[1].classList.add('active');
+    }, 100);
 });
 
 const resumeBtns = document.querySelectorAll('.resume-btn');
@@ -109,5 +119,12 @@ const typed = new Typed(".typing", {
     strings: ["Veterinarian", "Developer"],
     typeSpeed: 120,
     backSpeed: 20,
+    loop: true,
+});
+
+const explore = new Typed(".explore", {
+    strings: ["Explore", "More..."],
+    typeSpeed: 200,
+    backSpeed: 100,
     loop: true,
 });

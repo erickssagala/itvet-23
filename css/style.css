@@ -16,6 +16,7 @@
     --second-bg-color: #e9ebef;
     --third-bg-color: #9e9fa2;
     --main-color: #0e7454;
+    --light-green-color: #11b27f;
     --navy-blue-color: #021c4a;
     --disabled-color: rgba(48, 47, 47, 0.2);
     --scarlet-color: #f3390f;
@@ -145,12 +146,13 @@ section.active{
 
 
 .home-detail p{
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     margin: 1rem 0 2.5rem;
+    font-weight: 500;
 }
 
 .home-detail .btn-sci{
-    display: flex;
+    display: block;
     align-items: center;
 }
 
@@ -161,10 +163,15 @@ section.active{
     border: .2rem solid var(--main-color);
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: var(--bg-color);
     font-weight: 500;
 }
+
+.explore{
+    color: var(--white-color);
+}
+
 
 .btn:hover{
     background: transparent;
@@ -172,18 +179,28 @@ section.active{
     box-shadow: none;
 }
 
+.explore-btn:hover{
+    border: none;
+    color: var(--scarlet-color);
+    box-shadow: 0 0 1rem var(--scarlet-color);
+}
+
+.explore-btn:hover .explore{
+    color: var(--scarlet-color);
+}
+
 .home-detail .btn-sci .sci{
-    margin-left: 2rem;
+    margin-top: 2.5rem;
 }
 
 .home-detail .btn-sci .sci a {
     display: inline-flex;
-    padding: .8rem;
+    padding: .6rem;
     border: .2rem solid var(--main-color);
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
-    margin: 0 .8rem;
+    margin-right: 2rem;
     transition: .5s;
 }
 
@@ -289,8 +306,9 @@ section.active{
     align-items: center;
 }
 
-.services-box .icon i{
+.services-box .icon .service-icon{
     font-size: 4.5rem;
+    padding: .5rem;
     border-radius: 50%;
     transition: .5s;
 }
@@ -338,7 +356,21 @@ section.active{
 }
 
 .services-box p{
-    font-size: 1.6rem;
+    position: relative;
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    margin-bottom: .6rem;
+}
+
+.services-box p::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: .5rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    margin-left: -1.8rem;
 }
 
 
@@ -706,6 +738,7 @@ section.active{
 
 .contact-box .desc{
     margin: 1.5rem 0 2.5rem;
+    font-size: 2rem;
 }
 
 .contact-box .contact-detail{
@@ -731,7 +764,8 @@ section.active{
 .contact-box form{
     background: var(--second-bg-color);
     padding: 2.5rem 3.5rem 3.5rem;
-    border-radius: 1rem;
+    margin-top: 2.5rem;
+    border-radius: 2rem;
     text-align: center;
 }
 
@@ -751,7 +785,7 @@ section.active{
     border: .15rem solid var(--bg-color);
     border-radius: .6rem;
     font-size: 1.6rem;
-    color: var(--white-color);
+    color: var(--navy-blue-color);
 }
 
 .contact-box .field-box input:focus, .contact-box .field-box textarea:focus{
@@ -794,6 +828,11 @@ section.active{
 }
 
 @media screen and (max-width: 768px) {
+
+    html {
+        font-size: 50%;
+    }
+
     #menu-icon{
         display: block;
     }
@@ -868,6 +907,11 @@ section.active{
     .contact-box .btn{
         margin-bottom: 1rem;
     }
+
+    .home-detail .btn-sci .sci{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -883,6 +927,11 @@ section.active{
         margin-left: 0;
         margin-bottom: 2rem;
         margin-top: 2rem;
+    }
+
+    .home-detail .btn-sci .sci{
+        margin-top: 2rem;
+        margin-bottom: 3rem;
     }
 
     .portfolio-box .live-link a{
@@ -902,6 +951,42 @@ section.active{
     }
 }
 
+@media screen and (max-width: 375px) {
+    .home-detail, .resume-box h2, .resume-box .heading, .resume-box .desc, .resume-detail.about .resume-item {
+        text-align: center;
+    }
+
+    .home-detail .btn-sci{
+        flex-direction: column-reverse;
+    }
+
+    .home-detail .btn-sci .btn{
+        margin-left: 0;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    .home-detail .btn-sci .sci{
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    .portfolio-box .live-link a{
+        margin-bottom: 4rem;
+    }
+
+    .contact-box form{
+        padding: 2.5rem 3rem 3rem;
+    }
+
+    .contact-box h2{
+        font-size: 3.5rem;
+    }
+
+    .contact-box .btn{
+        margin-bottom: 1rem;
+    }
+}
 
 
 
